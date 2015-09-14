@@ -1,7 +1,7 @@
 angular.module("stBlurredDialog",[])
 	.constant('stBlurredDialogClasses',{
-		blurredRegion: 'st-blurred-region'	
-	 })
+		blurredRegion: 'st-blurred-region'
+	})
 	.factory('stBlurredDialog', ['$timeout', function($timeout){
 		var state = {
 			subscribers: [],
@@ -54,7 +54,7 @@ angular.module("stBlurredDialog",[])
 					}
 				});
 
-          	}],
+			}],
 			link: function(scope, element, attrs){
 			}
 		}
@@ -64,7 +64,7 @@ angular.module("stBlurredDialog",[])
 		return {
 			restrict: 'E',
 			replace: true,
-			templateUrl: 'st-blurred-dialog.html',
+			template: "<div ng-if='model.isOpen' class='st-blurred-region-overlay'><div ng-include src='model.pathToTemplate'></div></div>",
 			controller: ['$scope', 'stBlurredDialog', '$element', function($scope, stBlurredDialog, $element){
 
 				$scope.model = {
@@ -77,11 +77,11 @@ angular.module("stBlurredDialog",[])
 					$scope.model.isOpen = isOpen;
 					$scope.model.pathToTemplate = path;
 				});
-				
+
 				$scope.close = function(){
 					stBlurredDialog.close();
 				}
-          	}],
+			}],
 			link: function(scope, element, attrs){
 			}
 		}
