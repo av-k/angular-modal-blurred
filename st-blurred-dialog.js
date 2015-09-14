@@ -64,7 +64,7 @@ angular.module("stBlurredDialog",[])
 		return {
 			restrict: 'E',
 			replace: true,
-			templateUrl: 'st-blurred-dialog.html',
+			template: "<div ng-if='model.isOpen' class='st-blurred-region-overlay'><div ng-include src='model.pathToTemplate'></div></div>",
 			controller: ['$scope', 'stBlurredDialog', '$element', function($scope, stBlurredDialog, $element){
 
 				$scope.model = {
