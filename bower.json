@@ -1,0 +1,8 @@
+{
+  "name": "angular-modal-blurred",
+  "version": "0.0.1",
+  "ignore": [
+    ".idea",
+    ".gitignore"
+  ]
+}
